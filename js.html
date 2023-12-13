@@ -1,0 +1,76 @@
+<html>
+    <head><title>TEMEL JS</title></head>
+    <body>
+
+        <form>
+            <div>
+                <input name="kullaniciadi" 
+                id="kullaniciadi">
+                <span id="kAdiError"></span>
+            </div>
+            
+            <div>
+                <input name="sifre" 
+                id="sifre">
+                <span id="sifreError" ></span>
+            </div>
+            <a onclick="sifreKontrol()">Giriş Yap</a>
+        </form>
+        <script>
+            //DEğişken
+            var degisken;
+            degisken="Alper"
+            degisken=5
+            degisken= new Date()
+
+            // fonksiyon()
+
+            //FONKSİYON
+            function fonksiyon()
+            {
+                alert("Selam")
+            }
+            // fonksiyon2("Merhaba Millet")
+
+            // fonksiyon2()
+            function fonksiyon2(deger="")
+            {
+                if(deger){
+                    alert(deger)
+                }
+                else{
+                    alert("Fonksiyona değer atanmadı")
+                }
+                // alert(deger)
+            }
+
+            // fonksiyon3(3)
+            function fonksiyon3(deger){
+                if(deger==1){
+                    alert("Gelen Sayı "+deger)
+                }
+                else if(deger==2){
+                    alert("Gelen Sayı "+deger)
+                }
+                else{
+                    alert("Sayı 1 ve 2 değil")
+                }
+            }
+
+        </script>
+        <script>
+            function sifreKontrol(){
+                var kAdi = document.getElementById("kullaniciadi").value
+                var sifre = document.getElementById("sifre").value
+                if(kAdi ==""){
+                    document.getElementById("kAdiError").innerText="Kullanıcı adı boş bırakılamaz"
+                    // alert("Kullanıcı Adı boş bırakılamaz")
+                }
+                else if(sifre ==""){
+                    document.getElementById("sifreError").innerHTML="<b style='color:red'>şifre </b> boş bırakılamaz"
+                    // alert("Şifre boş bırakılamaz")
+                }
+            }
+        </script>
+    </body>
+</html>
