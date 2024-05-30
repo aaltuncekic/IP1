@@ -11,9 +11,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './universities.component.scss'
 })
 export class UniversitiesComponent {
-
-  universiteler:any[]=[];
-  ulke:any=undefined;
+  universiteler:any;
+  ulke:any;
 
   constructor(
     private apiService:ApiService
@@ -22,19 +21,16 @@ export class UniversitiesComponent {
   }
 
   get(){
-    console.log(this.apiService.getUniversities())
-    this.apiService.getUniversities()
-    .subscribe((response:any)=>{
-      // console.log("Üniversiteler",response)
+    this.apiService.getUniversities().subscribe((response:any)=>{
       this.universiteler = response
-      console.log("Üniversiteler",this.universiteler)
+      console.log(this.universiteler)
     })
-  }
 
+  }
   getCountry(){
-    this.apiService.getCountryUni(this.ulke)
-    .subscribe((response:any)=>{
-      this.universiteler=response
+    this.apiService.getCountryUni(this.ulke).subscribe((response:any)=>{
+      this.universiteler = response
+      console.log(this.universiteler)
     })
   }
 }

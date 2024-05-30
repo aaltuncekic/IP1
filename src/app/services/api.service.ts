@@ -19,4 +19,5 @@ export class ApiService {
   getCountryUni(ulke:any):Observable<any>{
     return this.http.get(`${this.url}${ulke}`)
   }
+
 }
