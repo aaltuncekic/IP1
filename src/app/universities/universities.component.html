@@ -1,0 +1,27 @@
+<p>
+    <select [(ngModel)]="ulke" (change)="getCountry()">
+        <option value="Turkey">Türkiye</option>
+        <option value="Germany">Almanya</option>
+    </select>
+    
+</p>
+@if(ulke){
+    <p>Seçilen ülke {{ulke}}</p>
+
+
+    @defer(on viewport; when universiteler){
+
+        @for(item of  universiteler; track item){
+            <p>{{item.name }} - <a href="{{item.web_pages[0]}}" target="_blank">{{item.web_pages[0]}}</a></p>
+        }
+        
+    }@placeholder{
+        <p>Veriler yükleniyor</p>
+    }
+
+    
+}
+@else {
+   <p>yukarıdan ülke seçiniz</p>
+}
+
