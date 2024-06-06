@@ -1,0 +1,33 @@
+<p>Giriş yap</p>
+
+<div [formGroup]="loginForm">
+    <p>
+        <input type="text" formControlName="username"
+        placeholder="Kullanıcı adı" />
+
+        
+        @if (loginForm.get('username')?.errors) {
+            @if(loginForm.controls['username'].hasError("required")){
+                
+            <span >Boş Bırakılamaz</span>
+            }
+            @if(loginForm.controls['username'].hasError("email")){
+               
+            <span >Geçerli bir E-posta gitriniz</span>
+            }
+        }
+    </p>
+    <p>
+        <input type="password" formControlName="password"
+        placeholder="Şifre" />
+        @if (loginForm.get('username')?.touched ){
+            <span >Boş Bırakılamaz</span>
+        }
+    </p>
+    <p>
+        <button 
+        [disabled]="!loginForm.valid"
+        (click)="onLogin()">Giriş Yap</button>
+    </p>
+
+</div>
