@@ -19,12 +19,12 @@ export class UniversitiesComponent {
   constructor(
     private apiService:ApiService,
     private router:Router
+  
   ){
-    this.checkLogin()
+     this.checkLogin()
   }
 
   checkLogin(){
-    //
     let login = localStorage.getItem("isLogin");
     if(login){
       this.isLogin = login
@@ -38,7 +38,6 @@ export class UniversitiesComponent {
       this.router.navigate(['/login'])
     }
 
-    console.log("Login Var mı?", login)
   }
 
   get(){

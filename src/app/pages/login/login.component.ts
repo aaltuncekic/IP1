@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { FormBuilder,  FormGroup,  FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,14 +30,15 @@ export class LoginComponent {
 
   onLogin(){
     if(this.loginForm.valid){
+
       let user = Object.assign({},this.loginForm.value)
-      if(user.username=="a@a.a" && user.password=="123"){
+
+      if(user.username=="a@a" && user.password=="123"){
+
         localStorage.setItem("isLogin","true")
         this.router.navigate(['/universiteler'])
 
-
       }
-      console.log(user)
     }
     else{
       this.loginForm.markAllAsTouched()
